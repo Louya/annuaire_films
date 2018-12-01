@@ -21,24 +21,34 @@
     </div>
     <div class="col-12 d-flex justify-content-center">
         <p>Filtrer par titre : </p>
-        <a class="px-5" href="list/display">All</a>
-        <a class="px-5" href="list/display/Action">Action</a>
-        <a class="px-5" href="list/display/Animation">Animation</a>
-        <a class="px-5" href="list/display/Aventure">Aventure</a>
-        <a class="px-5" href="list/display/Comédie">Comédie</a>
-        <a class="px-5" href="list/display/Drame">Drame</a>
-        <a class="px-5" href="list/display/Policier">Policier</a>
-        <a class="px-5" href="list/display/Science Fiction">Science Fiction</a>
-        <a class="px-5" href="list/display/Thriler">Thriler</a>
+        <a class="px-3" href="genre/display">All</a>
+        <a class="px-3" href="genre/display/action">Action</a>
+        <a class="px-3" href="genre/display/animation">Animation</a>
+        <a class="px-3" href="genre/display/aventure">Aventure</a>
+        <a class="px-3" href="genre/display/comedie">Comédie</a>
+        <a class="px-3" href="genre/display/drame">Drame</a>
+        <a class="px-3" href="genre/display/policier">Policier</a>
+        <a class="px-3" href="genre/display/science-fiction">Science Fiction</a>
+        <a class="px-3" href="genre/display/thriller">Thriler</a>
     </div>
 </header>
-{% for genre in list %}
-<article class="genre-card row my-3">
-    <div class="col-12">
-        <h2>genre.genre</h2>
-        <a href="fiche/display/{{genre.id}}"><img src="{{genre.jaquette}}" alt=""></a>
-        <a href="fiche/display/{{genre.id}}">{{genre.titre}}</a>
+<div class="genre-card  m-0 row">
+    <div class="col-12 d-flex justify-content-center">
+       <h2>Le genre</h2> 
+       {%for genre in list if genre.genre %}
+        {{genre.genre}}
+       {%endfor%}
     </div>
-</article>
-{% endfor %}
+</div>
+<article class="genre-card  m-0 row">
+        <div class="col-12 d-flex flex-wrap justify-content-center">
+            {% for film in list %}
+            <div class="genre-film p-0 m-3 d-flex flex-column align-items-center">
+                <a href="fiche/display/{{film.id}}"><img src="{{film.jaquette}}" width="187.5px" height="250px"></a>
+                <a class="py-2" href="fiche/display/{{film.id}}">{{film.titre}}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </article>
+
 {% endblock %}

@@ -10,5 +10,4 @@ switch ($action) {
         break;
  }
 
- echo $baseUrl;
  echo $twig->render('fiche.twig', array('list' => $list, 'baseUrl' => $baseUrl));

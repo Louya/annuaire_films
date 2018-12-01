@@ -14,7 +14,7 @@
 
 
 {% block affichage %}
-<article class="row film_fiche">
+<article class="row film_fiche m-0">
     {% for films in list %}
     <div class=" col-3 d-flex p-0">
         <img src="{{films.jaquette}}" width="auto" height="100%">
@@ -30,14 +30,14 @@
     </div>
     {% endfor %}
 </article>
-<div class="ba_bg row">
-    <div class="col-12 d-flex justify-content-center p-3 w-100">
+<div class="trailer-bg row m-0">
+    <div class="col-12 d-flex justify-content-center p-3">
         <h3>Bande-annonce</h3>
     </div>
 </div>
-<article class="ba_bg row">
+<article class="trailer-bg row m-0">
     {% for film in list %}
-    <div class="col-12 pb-4 d-flex justify-content-cente. w-100r">
+    <div class="col-12 pb-4 d-flex justify-content-center">
         <iframe width="650" height="365" src="{{film.trailer}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
     </div>

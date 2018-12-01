@@ -30,14 +30,23 @@ body main .list-image {
 body main .film_fiche {
   background-color: white;
 }
-body main .ba_bg {
-  background-color: black;
+body main .trailer-bg {
+  background-color: #dddddd;
+  width: 100%;
 }
 body main .real-photo {
   background-color: black !important;
 }
 body main .real-text {
   background-color: white;
+}
+body main .genre-card {
+  background-color: white;
+  width: 100%;
+}
+body main .genre-film {
+  width: 188px;
+  background-color: #dddddd;
 }
 body footer {
   background-color: black;

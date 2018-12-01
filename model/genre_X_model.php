@@ -7,10 +7,9 @@
   FROM genre
   INNER JOIN films_genre ON genre.id = films_genre.genre
   INNER JOIN films ON films_genre.film = films.id
-  WHERE genre.genre = :id
-  ORDER BY genre.genre";  // Requète SQL à envoyer
+  WHERE genre.genre = :id";  // Requète SQL à envoyer
   $response = $bdd->prepare( $sql ); // Préparation de la requète
-  $response->bindParam(':id', $L, PDO::PARAM_STR); // Passage du paramètre PHP $id dans SQL
+  $response->bindParam(':id', $id, PDO::PARAM_STR); // Passage du paramètre PHP $id dans SQL
   $response->execute(); // Exécution de la requềte
 
 //  Stockage des données à renvoyer au controleur
