@@ -1,14 +1,12 @@
 <?php 
 
-$scriptUrl = $_SERVER['SCRIPT_NAME'];
-$i = count(explode("/", trim($scriptUrl, '/')));
-$baseUrl = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'].substr($scriptUrl, 0, -9);
-
+//Infos de connexion à la base de données
     $username = 'root';
     $password = 'online@2017';
     $database ='annuaire_films';
     $host = 'localhost';
 
+// Chargement de l'environnement PDO
     try{
 
         $bdd = new PDO('mysql:host='.$host.';dbname='.$database.';charset=utf8',$username , $password);

@@ -1,9 +1,12 @@
+{# indique la déoendance au fichier template.twig #}
 {% extends "template.twig" %}
 
+{# bloque qui met à jour l'url de base en fonction du pc ou on se trouve #}
 {% block baseUrl %}
 <base href="{{baseUrl}}">
 {% endblock %}
 
+{# bloque qui affiche les infos sur la section active #}
 {% block info %}
 <div class="row">
     <p id="titre_home" class="col-12 text-center">
@@ -12,43 +15,48 @@
 </div>
 {% endblock %}
 
+{# bloque d'affichage principale qui affiche les films par genre #}
 {% block affichage %}
-<header class="row">
-    <div class="col-12 text-center m-4">
+{# titre de la section #}
+<section class="row mb-4">
+    <div class="col-12 text-center py-2">
         <h2>
             Liste des films par genres
         </h2>
     </div>
-    <div class="col-12 d-flex justify-content-center">
-        <p>Filtrer par titre : </p>
-        <a class="px-3" href="genre/display">All</a>
-        <a class="px-3" href="genre/display/action">Action</a>
-        <a class="px-3" href="genre/display/animation">Animation</a>
-        <a class="px-3" href="genre/display/aventure">Aventure</a>
-        <a class="px-3" href="genre/display/comedie">Comédie</a>
-        <a class="px-3" href="genre/display/drame">Drame</a>
-        <a class="px-3" href="genre/display/policier">Policier</a>
-        <a class="px-3" href="genre/display/science-fiction">Science Fiction</a>
-        <a class="px-3" href="genre/display/thriller">Thriler</a>
+    {# filtre par genre #}
+    <div class="col-12 d-flex flex-wrap justify-content-center align-items-center">
+        <p class="m-0 p-2 filtre-type">Filtrer par titre : </p>
+        <a class="p-2 filtre-select" href="genre/display">All</a>
+        <a class="p-2 filtre-select" href="genre/display/action">Action</a>
+        <a class="p-2 filtre-select" href="genre/display/animation">Animation</a>
+        <a class="p-2 filtre-select" href="genre/display/aventure">Aventure</a>
+        <a class="p-2 filtre-select" href="genre/display/comedie">Comédie</a>
+        <a class="p-2 filtre-select" href="genre/display/drame">Drame</a>
+        <a class="p-2 filtre-select" href="genre/display/policier">Policier</a>
+        <a class="p-2 filtre-select" href="genre/display/science-fiction">Science Fiction</a>
+        <a class="p-2 filtre-select" href="genre/display/thriller">Thriller</a>
     </div>
-</header>
-<div class="genre-card  m-0 row">
-    <div class="col-12 d-flex justify-content-center">
-       <h2>Le genre</h2> 
-       {%for genre in list if genre.genre %}
-        {{genre.genre}}
-       {%endfor%}
-    </div>
-</div>
-<article class="genre-card  m-0 row">
-        <div class="col-12 d-flex flex-wrap justify-content-center">
-            {% for film in list %}
-            <div class="genre-film p-0 m-3 d-flex flex-column align-items-center">
-                <a href="fiche/display/{{film.id}}"><img src="{{film.jaquette}}" width="187.5px" height="250px"></a>
-                <a class="py-2" href="fiche/display/{{film.id}}">{{film.titre}}</a>
-            </div>
-            {% endfor %}
-        </div>
-    </article>
+</section>
 
+{# Affichage des films d'un même genre #}
+    {% for genre in listGenre %}
+        {# affichage du genre #}
+        <header class="genre-card row d-flex justify-content-center align-items-center">
+            <h2>{{genre.genre}}</h2>
+        </header>
+        {# affichage de la jaquette et du titre #}
+        <article class="row">
+            <div class="col-12 d-flex flex-wrap justify-content-center py-3">
+                {% for film in listFilms %}
+                    {% if film.genre == genre.genre %}
+                        <div class="film_stamp p-0 m-1 m-md-3 m-lg-4 m-xl-4 d-flex flex-column align-items-center justify-content-between">
+                            <a href="fiche/display/{{film.id}}"><img class="home-jaquette" src="{{film.jaquette}}" alt="{{film.titre}}"></a>
+                            <a class="py-2 text-center" href="fiche/display/{{film.id}}">{{film.titre}}</a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </article>
+    {% endfor %}
 {% endblock %}

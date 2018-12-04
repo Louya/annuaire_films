@@ -11,7 +11,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-
     <!-- titre et favicon -->
     <title>Annuaire de films</title>
     <!-- chemin de base des liens -->
@@ -22,26 +21,33 @@
 </head>
 
 {# corps de la page hmtl #}
-
 <body>
-    <nav class="container-fluid">
-        <div class="row d-flex justify-content-between align-items-center">
-            <div>
-                <a class="col-12" href="home">
-                    <h1 class="px-3">Cinésumé</h1>
+
+    {# barre de navigation #}
+    <nav class="container-fluid navbar sticky-top navbar-expand-lg navbar-dark">
+        <div class="row d-flex justify-content-between align-items-center w-100 m-0 p-0">
+            <div class="px-0 px-lg-5 px-xl-5 d-flex align-items-center">
+                <a class="col-12 p-0 m-0" href="home">
+                    <h1 class=" menu-sub p-1 p-md-2 p-lg-3 p-xl-3 m-0">Cinésumé</h1>
                 </a>
             </div>
-            <div>
-                <a class="px-3" href="list/display">Liste des films</a>
-                <a class="px-3" href="genre/display">Genre</a>
-                <a class="px-3" href="realisateur/display">Réalisateurs</a>
+            {# boutton burger #}
+            <button class="ml-4 navbar-toggler" type="button" data-toggle="collapse" data-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            {# Menus de selection #}
+            <div class="collapse navbar-collapse px-5" id="navmenu">
+                <a class="nav-link menu-sub p-4" href="list/display">Liste des films</a>
+                <a class="nav-link menu-sub p-4" href="genre/display">Genre</a>
+                <a class="nav-link menu-sub p-4" href="realisateur/display">Réalisateurs</a>
             </div>
         </div>
     </nav>
+
     {# Partie header avec info sur la section #}
     <header class="container-fluid">
         <!-- Block twig d'affichage des informations relatives à l'affichage -->
-        <section class="container p-5">
+        <section class="container p-3 p-lg-4 p-xl-4">
             {% block info %}
             {% endblock %}
         </section>
@@ -55,8 +61,31 @@
         </section>
     </main>
 
-    <footer>
-
+    {# footer de la page #}
+    <footer class="container-fluid">
+        {# retour à l'acceuil #}
+        <section class="container">
+            <article class="row d-flex justify-content-center justify-content-lg-between align-items-center">
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 m-0 d-flex justify-content-end align-items-center">
+                    <a class="col-12 p-0 m-0 d-flex justify-content-center justify-content-lg-end" href="home">
+                        <h1 class="menu-sub m-0 px-4 py-3 py-lg-5 py-xl-5">Cinésumé</h1>
+                    </a>
+                </div>
+                {# Les auteurs du site #}
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 m-0 d-flex flex-column justify-content-center align-items-center">
+                    <h3 class="m-0 p-2">Les createurs</h3>
+                    <p class="m-0 p-1 auteurs">Gaëtan Emond</p>
+                    <p class="m-0 p-1 auteurs">Aurélien Deloye</p>
+                    <p class="m-0 p-1 auteurs">Fabien Cazalet</p>
+                </div>
+                {# logo de l'ACS avec un lien  #}
+                <div class="col-12 col-md-4 col-lg-4 col-xl-4 d-flex justify-content-center align-items-between">
+                    <a class="d-flex justify-content-center pt-2 pt-lg-0 pt-xl-0" href="https://www.accesscodeschool.fr/" target="_blank">
+                        <img class="logo-acs" src="media/logo-acs.jpg" alt="logo acs">
+                    </a>
+                </div>
+            </article>
+        </section>
     </footer>
 
     <!-- Optional JavaScript -->

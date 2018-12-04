@@ -1,6 +1,6 @@
 {% extends "template.twig" %}
 
-{# url de base pour les liens relatifs  #}
+{# url de base pour les liens en fonction de la machine  #}
 {% block baseUrl %}
 <base href="{{baseUrl}}">
 {% endblock %}
@@ -14,35 +14,38 @@
 </div>
 {% endblock %}
 
-{# affichage principal de la page #}
+{# affichage des réalisateurs#}
 {% block affichage %}
-<header class="row">
+<section class="row">
+    {# affichage du titre #}
     <div class="col-12 text-center m-2">
         <h2>
             Les réalisateurs
         </h2>
     </div>
-    <div class="col-12 d-flex justify-content-between">
-            <p>Filtrer par Nom : </p>
-            <a class="px-3" href="realisateur/display">All</a>
-            <a class="px-3" href="realisateur/display/B">B</a>
-            <a class="px-3" href="realisateur/display/C">C</a>
-            <a class="px-3" href="realisateur/display/F">F</a>
-            <a class="px-3" href="realisateur/display/G">G</a>
-            <a class="px-3" href="realisateur/display/K">K</a>
-            <a class="px-3" href="realisateur/display/M">M</a>
-            <a class="px-3" href="realisateur/display/N">N</a>
-            <a class="px-3" href="realisateur/display/S">S</a>
-            <a class="px-3" href="realisateur/display/T">T</a>
-            <a class="px-3" href="realisateur/display/W">W</a>
+    {# filtre par nom des réalisateurs #}
+    <div class="col-12 d-flex flex-wrap justify-content-center">
+            <p class="m-0 p-2 filtre-type">Filtrer par Nom : </p>
+            <a class="px-3 py-2 filtre-select" href="realisateur/display">All</a>
+            <a class="px-3 py-2 filtre-select" href="realisateur/display/B">B</a>
+            <a class="px-3 py-2 filtre-select" href="realisateur/display/C">C</a>
+            <a class="px-3 py-2 filtre-select" href="realisateur/display/F">F</a>
+            <a class="px-3 py-2 filtre-select" href="realisateur/display/G">G</a>
+            <a class="px-3 py-2 filtre-select" href="realisateur/display/K">K</a>
+            <a class="px-3 py-2 filtre-select" href="realisateur/display/M">M</a>
+            <a class="px-3 py-2 filtre-select" href="realisateur/display/N">N</a>
+            <a class="px-3 py-2 filtre-select" href="realisateur/display/S">S</a>
+            <a class="px-3 py-2 filtre-select" href="realisateur/display/T">T</a>
+            <a class="px-3 py-2 filtre-select" href="realisateur/display/W">W</a>
     </div>
-</header>
+</section>
+
 {% for film in list %}
 <article class="row my-3">
-    <div class=" real-photo col-3 d-flex p-0 align-items-center">
-        <img src="{{film.photo}}" width="100%" height="350px">
+    <div class=" div-real col-12 col-md-3 col-lg-3 col-xl-3 d-flex p-0 align-items-center">
+        <img class="real-photo" src="{{film.photo}}" width="100%" height="350px">
     </div>
-    <div class="real-text col-9 px-5 py-3 d-flex flex-column justify-content-between">
+    <div class="real-text col-12 col-md-9 col-lg-9 col-xl-9 px-5 py-3 d-flex flex-column justify-content-between">
         <h2>{{film.prenom}} {{film.nom}}</h2>
         <p>{{film.bio}}</p>
         <p>Films :</p>

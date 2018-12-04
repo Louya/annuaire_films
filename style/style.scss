@@ -2,64 +2,8 @@
 $mainColor : #333333;
 $fontColor : #333333;
 
-//mixin
+@import 'smScreen.scss';
+@import 'mdScreen.scss';
+@import 'lgScreen.scss';
 
 
-//nesting de la page d'acceuil
-body{
-    background-color: $mainColor;
-    color: $fontColor;
-    nav{
-        background-color: black;
-    }
-    header{
-        color: white
-    }
-    main{
-        header{
-            color: #007bff;
-        }
-        h3{
-            color: #007bff;
-        }
-        h2{
-            color: #007bff;
-        }
-        .film_stamp{
-            width: 187.5px;
-            background-color: white;
-        }
-        .list-card{
-            background-color: white;
-        }
-        .list-image{
-            background-color: black;
-        }
-        .film_fiche{
-            background-color: white;
-        }
-        .trailer-bg{
-            background-color: #dddddd;
-            width: 100%;
-        }
-        .real-photo{
-            background-color: black !important;
-        }
-        .real-text{
-            background-color: white;
-        }
-        .genre-card{
-            background-color: white;
-            width: 100%;
-        }
-        .genre-film{
-            width: 188px;
-            background-color: #dddddd;
-        }
-    }
-   
-    footer{
-        background-color: black;
-        height: 150px;
-    }
-}

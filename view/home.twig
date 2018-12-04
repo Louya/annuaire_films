@@ -1,9 +1,12 @@
+{# indique la dépendance au template #}
 {% extends "template.twig" %}
 
+{# bloque qui fourni l'url de base en fonction de la machine #}
 {% block baseUrl %}
 <base href="{{baseUrl}}">
 {% endblock %}
 
+{# bloque d'information générale sur la section home #}
 {% block info %}
 <div class="row">
     <p id="titre_home" class="col-12 text-center">
@@ -14,18 +17,21 @@
 </div>
 {% endblock %}
 
+{# affichage des vignettes des films de l'acceuil #}
 {% block affichage %}
+{# titre des films à l'affiche #}
 <div class="row">
-    <div class="col-12 d-flex justify-content-center">
+    <div class="col-12 py-2 w-100">
         <h2>Les films à l'affiche</h2>
     </div>
 </div>
+{# génération des vignettes par film #}
 <article class="row">
     <div class="col-12 d-flex flex-wrap justify-content-center">
         {% for film in list %}
-        <div class="film_stamp p-0 m-4 d-flex flex-column align-items-center">
-            <a href="fiche/display/{{film.id}}"><img src="{{film.jaquette}}" width="187.5px" height="250px"></a>
-            <a class="py-2" href="fiche/display/{{film.id}}">{{film.titre}}</a>
+        <div class="film_stamp p-0 m-1 m-md-3 m-lg-4 m-xl-4 d-flex flex-column align-items-center justify-content-between">
+            <a href="fiche/display/{{film.id}}"><img class="home-jaquette" src="{{film.jaquette}}" alt="{{film.titre}}" width="190px" height="250px"></a>
+            <a class="py-2 text-center" href="fiche/display/{{film.id}}">{{film.titre}}</a>
         </div>
         {% endfor %}
     </div>

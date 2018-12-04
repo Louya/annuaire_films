@@ -1,5 +1,5 @@
 <?php
-
+ 
 //routeur pour l'action à effectuer
 switch ($action) {
     case 'display': // action d'affichage des films
@@ -18,8 +18,8 @@ switch ($action) {
 
     default: //action par défaut : affichage des films (display)
         require 'model/genre_model.php';
-        break;
+    break;
  }
 
  //génération du block twig genre avec la liste du ou des genres à afficher
-echo $twig->render('genre.twig', array('list' => $list, 'baseUrl' => $baseUrl));
+echo $twig->render('genre.twig', array('listFilms' => $listFilms, 'listGenre' => $listGenre, 'baseUrl' => $baseUrl));

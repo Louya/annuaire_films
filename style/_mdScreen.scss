@@ -1,0 +1,113 @@
+@media (min-width: 768px) {
+//nesting de la page d'acceuil
+body{
+    background-color: $mainColor;
+    color: $fontColor;
+    min-height: 100vh;
+    nav{
+        background-color: black;
+        a{
+            text-decoration: none !important;
+        }
+        .menu-sub{
+            text-decoration: none !important;
+            color: #007bff;
+        }
+        .menu-sub:hover{
+            color : white;
+            background-color: #007bff;
+            transition: 200ms;
+        }
+    }
+    header{
+        color: white;
+        background-color: #222222;
+    }
+    main{
+        header{
+            color: #007bff;
+        }
+        h3{
+            color: #007bff;
+        }
+        h2{
+            color: #007bff;
+        }
+       
+        .film_stamp{
+            width: 190px;
+            background-color: white;
+        }
+        .list-card{
+            background-color: white;
+        }
+        .list-image{
+            background-color: black;
+        }
+        .div-jaquette{
+            height: 100%;
+            background-color: black;
+        }
+        .fiche-jaquette{
+            width: 100%;
+            height: auto;
+        }
+        .film_fiche{
+            background-color: white;
+        }
+        .trailer-bg{
+            background-color: black;
+            width: 100%;
+        }
+        .div-real{
+            background-color: black !important;
+            width: 90%;
+            .real-photo{
+                width: 100%;
+                height: auto;
+            }
+        }
+        .real-text{
+            background-color: white;
+        }
+        .filtre-type{
+            background-color: #dddddd;
+        }
+        .filtre-select{
+            background-color: #eeeeee;
+            text-decoration: none !important;
+            color: #007bff;
+        }
+        .filtre-select:hover{
+            background-color: #007bff;
+            color: white;
+            transition: 200ms;
+        }
+        .genre-card{
+            background-color: #444444;
+            width: 82.5%;
+        }
+    }
+   
+    footer{
+        background-color: black;
+        color: #aaaaaa;
+        a{
+            text-decoration: none !important;
+        }
+        .menu-sub{
+            text-decoration: none !important;
+            color: #007bff;
+        }
+        .menu-sub:hover{
+            color : white;
+            background-color: #007bff;
+            transition: 200ms;
+        }
+        .logo-acs{
+            width: 40%;
+            height: auto;
+        }
+    }
+}
+}
