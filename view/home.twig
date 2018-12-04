@@ -30,7 +30,7 @@
     <div class="col-12 d-flex flex-wrap justify-content-center">
         {% for film in list %}
         <div class="film_stamp p-0 m-1 m-md-3 m-lg-4 m-xl-4 d-flex flex-column align-items-center justify-content-between">
-            <a href="fiche/display/{{film.id}}"><img class="home-jaquette" src="{{film.jaquette}}" alt="{{film.titre}}"></a>
+            <a href="fiche/display/{{film.id}}"><img class="home-jaquette" src="{{film.jaquette}}" alt="{{film.titre}}" width="190px" height="250px"></a>
             <a class="py-2 text-center" href="fiche/display/{{film.id}}">{{film.titre}}</a>
         </div>
         {% endfor %}

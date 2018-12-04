@@ -31,10 +31,6 @@ body main h3 {
 body main h2 {
   color: #007bff;
 }
-body main .home-jaquette {
-  width: 100%;
-  height: auto;
-}
 body main .film_stamp {
   width: 47%;
   background-color: white;
@@ -157,7 +153,7 @@ body footer .logo-acs {
     color: #007bff;
   }
   body main .film_stamp {
-    width: 187.5px;
+    width: 190px;
     background-color: white;
   }
   body main .list-card {
@@ -264,8 +260,21 @@ body footer .logo-acs {
   body main h2 {
     color: #007bff;
   }
+  body main .filtre-type {
+    background-color: #dddddd;
+  }
+  body main .filtre-select {
+    background-color: #eeeeee;
+    text-decoration: none !important;
+    color: #007bff;
+  }
+  body main .filtre-select:hover {
+    background-color: #007bff;
+    color: white;
+    transition: 200ms;
+  }
   body main .film_stamp {
-    width: 187.5px;
+    width: 190px;
     background-color: white;
   }
   body main .list-card {
@@ -294,19 +303,6 @@ body footer .logo-acs {
   }
   body main .real-text {
     background-color: white;
-  }
-  body main .filtre-type {
-    background-color: #dddddd;
-  }
-  body main .filtre-select {
-    background-color: #eeeeee;
-    text-decoration: none !important;
-    color: #007bff;
-  }
-  body main .filtre-select:hover {
-    background-color: #007bff;
-    color: white;
-    transition: 200ms;
   }
   body main .genre-card {
     background-color: #444444;
